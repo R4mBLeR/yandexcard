@@ -1,0 +1,107 @@
+# Build outputs
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE folders
+.vs/
+.vscode/
+.idea/
+
+# Backup files
+*.backup.*
+*.bak
+*.tmp
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet packages
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nupkg
+*.snupkg
+
+# Publish outputs
+publish/
+*.[Pp]ublish.xml
+*.pubxml
+*.[Pp]ublishproj
+
+# Configuration files with sensitive data
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.local.json
+appsettings.*.json
+appsettings.*.local.json
+secrets.json
+connectionstrings.*.json
+
+# Entity Framework Core Migrations (uncomment if needed)
+# Migrations/
+
+# Cache files
+*.cache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+*.etl
+
+# Test coverage files
+coverage.*
+*.coverage
+*.coverage.xml
+
+# Visual Studio backup files
+_ReSharper.*
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.dbmdl
+*.dbproj
+
+# Website files
+*.Website
+*.Publish.xml
+
+# Azure files
+*.azurePubxml
+PublishProfiles/
+
+## Docker files
+# Docker ignore
+.dockerignore
+
+# Docker compose
+docker-compose.*.yml
+docker-compose.*.yaml
+
+# Docker build contexts
+**/Dockerfile*
+**/.docker/
+
+# Docker volumes and containers
+*.container
+*.volume
