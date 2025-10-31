@@ -23,16 +23,6 @@ namespace YandexMusicGrabberAPI.Controllers
 		[HttpGet("{name}", Name = "GetTrackByName")]
 		public async Task<ActionResult<TrackDto>> GetTrackByName(string name)
 		{
-			if (!_yandexMusicService.IsAuthorized())
-			{
-				return Unauthorized(new
-				{
-					message = "Yandex Music authentication required",
-					details = "Please provide valid OAuth token",
-					code = "YANDEX_AUTH_REQUIRED"
-				});
-			}
-
 			var track = await _yandexMusicService.GetTrackByName(name);
 			return Ok(track);
 		}

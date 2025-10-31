@@ -24,16 +24,6 @@ namespace YandexMusicGrabberAPI.Controllers
 		[HttpGet("{id}/lyrics", Name = "GetTrackLyrics")]
 		public async Task<ActionResult<TrackLyricsDto>> GetTrackLyrics(string id)
 		{
-			if (!_yandexMusicService.IsAuthorized())
-			{
-				return Unauthorized(new
-				{
-					message = "Yandex Music authentication required",
-					details = "Please provide valid OAuth token",
-					code = "YANDEX_AUTH_REQUIRED"
-				});
-			}
-
 			var lyricsDto = await _yandexMusicService.GetTrackLyrics(id);
 			return Ok(lyricsDto);
 		}

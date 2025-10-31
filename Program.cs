@@ -21,7 +21,15 @@ builder.Services.AddScoped<IYandexMusicService>(provider =>
 	var logger = provider.GetRequiredService<ILogger<YandexMusicService>>();
 
 	// Авторизация
-	yandexMusic.User.Authorize(authStorage, token);
+	try
+	{
+		yandexMusic.User.Authorize(authStorage, token);
+	}
+	catch (Exception ex)
+	{
+		logger.LogError("Yandex Token is invalid!");
+	}
+	
 
 	// Создаем сервис с готовыми зависимостями
 	return new YandexMusicService(authStorage, yandexMusic, logger);
@@ -31,6 +39,8 @@ builder.Services.AddScoped<YandexMusicService>(provider =>
 	provider.GetRequiredService<IYandexMusicService>() as YandexMusicService);
 
 var app = builder.Build();
+
+app.UseMiddleware<YandexTokenMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
